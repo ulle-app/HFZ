@@ -9,6 +9,12 @@
     <link rel="stylesheet" crossorigin href="/HFZ/assets/index-BGKuLu0X.css">
   </head>
   <body>
+    <script>
+      // Redirect to /#/ if hash is missing (for GitHub Pages HashRouter)
+      if (!window.location.hash || window.location.hash === '#') {
+        window.location.replace(window.location.pathname + window.location.search + '#/');
+      }
+    </script>
     <div id="root"></div>
   </body>
 </html>
