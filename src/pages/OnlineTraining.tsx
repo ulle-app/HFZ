@@ -175,7 +175,7 @@ const OnlineTraining = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {onlinePrograms.map((program, index) => (
+            {onlinePrograms.map((program) => (
               <div key={program.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <img

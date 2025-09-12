@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Award, Users, Calendar } from 'lucide-react';
+import { Star, Award, Users } from 'lucide-react';
 
 const Trainers = () => {
   const trainers = [

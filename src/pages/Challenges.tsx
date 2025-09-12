@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Calendar, Users, Target, Star, Clock, Award, TrendingUp } from 'lucide-react';
+import { Trophy, Calendar, Users, Star, Clock, Award, TrendingUp } from 'lucide-react';
 
 const Challenges = () => {
   const currentChallenges = [
@@ -133,7 +133,7 @@ const Challenges = () => {
       <section className="py-20 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {challengeStats.map((stat, index) => (
+            {challengeStats.map((stat) => (
               <div key={index} className="text-center group">
                 <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-10 w-10 text-white" />
@@ -157,7 +157,7 @@ const Challenges = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {currentChallenges.map((challenge, index) => (
+            {currentChallenges.map((challenge) => (
               <div key={challenge.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300">
                 <div className="relative">
                   <img
@@ -249,7 +249,7 @@ const Challenges = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {upcomingChallenges.map((challenge, index) => (
+            {upcomingChallenges.map((challenge) => (
               <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300 group">
                 <div className="relative">
                   <img
@@ -311,7 +311,7 @@ const Challenges = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pastWinners.map((winner, index) => (
+            {pastWinners.map((winner) => (
               <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-[#FF3278] transition-all duration-300">
                 <div className="relative inline-block mb-6">
                   <img
