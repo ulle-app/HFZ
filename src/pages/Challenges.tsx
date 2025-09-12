@@ -157,7 +157,7 @@ const Challenges = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {currentChallenges.map((challenge, index) => (
+            {currentChallenges.map((challenge) => (
               <div key={challenge.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300">
                 <div className="relative">
                   <img
