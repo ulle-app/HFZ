@@ -135,19 +135,21 @@ This project is configured with GitHub Actions for automatic deployment to GitHu
 
 #### Setup Instructions:
 
-1. **Enable GitHub Pages** in your repository:
-   - Go to Settings > Pages
-   - Source: Deploy from a branch
-   - Branch: Select `gh-pages` 
-   - Folder: `/ (root)`
+1. **Push your code** to GitHub repository on the `main` branch
 
-2. **Repository Settings**:
-   - Ensure Actions have write permissions: Settings > Actions > General > Workflow permissions > "Read and write permissions"
+2. **Enable GitHub Pages** in your repository:
+   - Go to **Settings** > **Pages**
+   - **Source**: Select "**GitHub Actions**" (not "Deploy from a branch")
 
-3. **Automatic Deployment**:
+3. **Repository Settings**:
+   - Go to **Settings** > **Actions** > **General**
+   - Under "Workflow permissions", select "**Read and write permissions**"
+   - Check "Allow GitHub Actions to create and approve pull requests"
+
+4. **Automatic Deployment**:
    - Push commits to `main` branch
    - GitHub Actions will automatically build and deploy
-   - View deployment status in the Actions tab
+   - View deployment status in the **Actions** tab
    - Your site will be available at: `https://yourusername.github.io/HFZ/`
 
 #### Manual Build (Local):
