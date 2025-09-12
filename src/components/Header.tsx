@@ -33,7 +33,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" onClick={() => {console.log('Logo/Home clicked, navigating to /');}}>
             <Dumbbell className="h-7 w-7 text-[#FF3278]" />
             <span className="text-xl font-black text-white">
               HEAL<span className="text-[#FF3278]">FIT</span>
@@ -62,6 +62,7 @@ const Header = () => {
                         ? 'text-[#FF3278]'
                         : 'text-gray-300 hover:text-white'
                     }`}
+                    onClick={() => {console.log(`Desktop nav clicked: ${item.name}, navigating to ${item.href}`);}}
                   >
                     {item.name}
                   </Link>
@@ -74,7 +75,7 @@ const Header = () => {
                         key={child.name}
                         to={child.href}
                         className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200"
-                        onClick={() => setOpenDropdown(null)}
+                        onClick={() => {console.log(`Desktop dropdown clicked: ${child.name}, navigating to ${child.href}`); setOpenDropdown(null);}}
                       >
                         {child.name}
                       </Link>
@@ -121,7 +122,7 @@ const Header = () => {
                             key={child.name}
                             to={child.href}
                             className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-red-600 hover:bg-gray-50"
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={() => {console.log(`Mobile dropdown clicked: ${child.name}, navigating to ${child.href}`); setIsMenuOpen(false);}}
                           >
                             {child.name}
                           </Link>
@@ -137,7 +138,7 @@ const Header = () => {
                         ? 'text-red-600 bg-green-50'
                         : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
                     }`}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {console.log(`Mobile nav clicked: ${item.name}, navigating to ${item.href}`); setIsMenuOpen(false);}}
                   >
                     {item.name}
                   </Link>
