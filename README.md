@@ -129,19 +129,47 @@ npm run dev
 
 ## 🚀 Deployment
 
-To build for production:
+### Automatic Deployment to GitHub Pages
+
+This project is configured with GitHub Actions for automatic deployment to GitHub Pages. Every commit to the `main` branch will trigger a build and deployment.
+
+#### Setup Instructions:
+
+1. **Enable GitHub Pages** in your repository:
+   - Go to Settings > Pages
+   - Source: Deploy from a branch
+   - Branch: Select `gh-pages` 
+   - Folder: `/ (root)`
+
+2. **Repository Settings**:
+   - Ensure Actions have write permissions: Settings > Actions > General > Workflow permissions > "Read and write permissions"
+
+3. **Automatic Deployment**:
+   - Push commits to `main` branch
+   - GitHub Actions will automatically build and deploy
+   - View deployment status in the Actions tab
+   - Your site will be available at: `https://yourusername.github.io/HFZ/`
+
+#### Manual Build (Local):
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
+The built files will be in the `dist/` directory.
 
-### Deployment Options
+### Alternative Deployment Options
 - **Vercel**: Connect your GitHub repository for automatic deployments
 - **Netlify**: Drag and drop the `dist` folder or use git integration
-- **GitHub Pages**: Use GitHub Actions for automated deployment
 - **Firebase Hosting**: Deploy using Firebase CLI
+
+### GitHub Actions Workflow
+
+The CI/CD pipeline includes:
+- ✅ **Code Quality**: Runs ESLint checks
+- ✅ **Build Process**: Compiles TypeScript and bundles assets
+- ✅ **Automated Deployment**: Deploys to GitHub Pages
+- ✅ **Concurrent Protection**: Prevents conflicting deployments
 
 ## 🤝 Contributing
 
