@@ -8,7 +8,8 @@
       "Bash(chmod:*)",
       "Bash(pkill:*)",
       "Bash(mkdir:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

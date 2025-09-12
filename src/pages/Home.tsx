@@ -19,7 +19,8 @@ function getBusinessStatus(now, hours) {
   const [startStr, endStr] = range.split(' - ');
   const parse = (s) => {
     const [time, period] = s.trim().split(' ');
-    let [h, m] = time.split(':').map(Number);
+    const [tempH, m] = time.split(':').map(Number);
+    let h = tempH;
     if (period === 'PM' && h !== 12) h += 12;
     if (period === 'AM' && h === 12) h = 0;
     return { h, m };
