@@ -15,8 +15,10 @@ import Challenges from './pages/Challenges';
 import OnlineTraining from './pages/OnlineTraining';
 
 function App() {
+  const basename = process.env.NODE_ENV === 'production' ? '/HFZ' : '';
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="min-h-screen bg-[#15171C]">
         <Header />
         <main>
