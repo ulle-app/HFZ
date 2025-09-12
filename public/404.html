@@ -6,7 +6,7 @@
     <script type="text/javascript">
       // GitHub Pages SPA redirect
       // This script redirects GitHub Pages 404s back to index.html with the path as a query parameter
-      var pathSegmentsToKeep = 1; // For project pages (username.github.io/repository-name/)
+  var pathSegmentsToKeep = 2; // For project pages (username.github.io/repository-name/)
       
       var l = window.location;
       var redirectPath = l.pathname.split('/').slice(pathSegmentsToKeep).join('/');
