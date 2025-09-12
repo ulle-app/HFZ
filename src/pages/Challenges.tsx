@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Calendar, Users, Target, Star, Clock, Award, TrendingUp } from 'lucide-react';
+import { Trophy, Calendar, Users, Star, Clock, Award, TrendingUp } from 'lucide-react';
 
 const Challenges = () => {
   const currentChallenges = [

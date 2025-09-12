@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Dumbbell, Users, Heart, Target, Clock, Zap, Apple, Shield, Activity, Music, Monitor, GraduationCap } from 'lucide-react';
 
 const Services = () => {

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Apple, Clock, Target, BookOpen, CheckCircle, Star, Utensils, Heart } from 'lucide-react';
+import { Apple, BookOpen, CheckCircle, Star, Utensils, Heart, Target } from 'lucide-react';
 
 const Nutrition = () => {
   const services = [
