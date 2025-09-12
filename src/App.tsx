@@ -1,41 +1,45 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Certification from './pages/Certification';
-import Membership from './pages/Membership';
-import Trainers from './pages/Trainers';
-import Contact from './pages/Contact';
-import Transformations from './pages/Transformations';
-import Nutrition from './pages/Nutrition';
-import Challenges from './pages/Challenges';
-import OnlineTraining from './pages/OnlineTraining';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+function Home() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h1>Home</h1>
+      <nav style={{ marginBottom: 20 }}>
+        <Link to="/about">About</Link> |{' '}
+        <Link to="/services">Services</Link>
+      </nav>
+      <p>Welcome to the new homepage!</p>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h1>About</h1>
+      <Link to="/">Home</Link>
+    </div>
+  );
+}
+
+function Services() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h1>Services</h1>
+      <Link to="/">Home</Link>
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#15171C]">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/certification" element={<Certification />} />
-            <Route path="/membership" element={<Membership />} />
-            <Route path="/trainers" element={<Trainers />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/transformations" element={<Transformations />} />
-            <Route path="/nutrition" element={<Nutrition />} />
-            <Route path="/challenges" element={<Challenges />} />
-            <Route path="/online-training" element={<OnlineTraining />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
     </Router>
   );
 }
