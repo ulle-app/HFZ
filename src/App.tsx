@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,10 +15,8 @@ import Challenges from './pages/Challenges';
 import OnlineTraining from './pages/OnlineTraining';
 
 function App() {
-  const basename = process.env.NODE_ENV === 'production' ? '/HFZ' : '';
-  
   return (
-    <Router basename={basename}>
+    <Router>
       <div className="min-h-screen bg-[#15171C]">
         <Header />
         <main>
