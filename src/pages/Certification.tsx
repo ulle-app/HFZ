@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { GraduationCap, Award, Users, Star, CheckCircle, BookOpen, Dumbbell, Heart, Calendar, Phone, Mail, MapPin, IndianRupee, Target } from 'lucide-react';
+import React, { useState } from 'react';
+import { GraduationCap, Award, Users, Star, CheckCircle, BookOpen, Dumbbell, Heart, Target, Calendar, Phone, Mail, MapPin, IndianRupee } from 'lucide-react';
 
 const Certification = () => {
   const [activeTab, setActiveTab] = useState('overview');
