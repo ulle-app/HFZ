@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Phone, CalendarHeart } from 'lucide-react';
+import { ArrowRight, Users, Award, Clock, Star, MapPin, Phone, CalendarHeart } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
@@ -19,8 +19,7 @@ function getBusinessStatus(now, hours) {
   const [startStr, endStr] = range.split(' - ');
   const parse = (s) => {
     const [time, period] = s.trim().split(' ');
-    let [h] = time.split(':').map(Number);
-    const [, m] = time.split(':').map(Number);
+    let [h, m] = time.split(':').map(Number);
     if (period === 'PM' && h !== 12) h += 12;
     if (period === 'AM' && h === 12) h = 0;
     return { h, m };
@@ -53,6 +52,12 @@ const Home = () => {
     { title: 'Yoga & Meditation', description: 'Traditional yoga practices for mind-body wellness and spiritual growth.', image: 'https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=800', link: '/services' }
   ];
 
+  const stats = [
+    { icon: Users, label: 'Happy Members', value: '3000+' },
+    { icon: Award, label: 'Certified Trainers', value: '20+' },
+    { icon: Clock, label: 'Years Experience', value: '8+' },
+    { icon: Star, label: 'Google Rating', value: '4.5★' }
+  ];
 
   const businessInfo = {
     hours: {
@@ -84,7 +89,7 @@ const Home = () => {
     updateStatus();
     const interval = setInterval(updateStatus, 60000);
     return () => clearInterval(interval);
-  }, [businessInfo.hours]);
+  }, []);
 
   function getStatusMessage(statusCode) {
     switch (statusCode) {
