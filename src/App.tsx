@@ -16,7 +16,7 @@ import OnlineTraining from './pages/OnlineTraining';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/HFZ">
       <div className="min-h-screen bg-[#15171C]">
         <Header />
         <main>
