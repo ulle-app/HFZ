@@ -161,26 +161,26 @@ const Services = () => {
       </section>
 
       {/* Special Programs */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#15171C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Special Programs</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">SPECIAL PROGRAMS</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Specialized programs for specific goals and populations
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {specialPrograms.map((program, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-                <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div key={index} className="bg-[#171A26] border border-gray-700 p-8 rounded-2xl hover:border-primary-green transition-all duration-300 text-center group">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <program.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{program.title}</h3>
-                <p className="text-gray-600 mb-6">{program.description}</p>
-                <div className="flex justify-between text-sm text-gray-500 border-t pt-4">
-                  <span><strong>Duration:</strong> {program.duration}</span>
-                  <span><strong>Sessions:</strong> {program.sessions}</span>
+                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wide">{program.title}</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">{program.description}</p>
+                <div className="flex justify-between text-sm text-gray-400 border-t border-gray-600 pt-4">
+                  <span className="font-semibold text-gray-300"><strong className="text-primary-green">Duration:</strong> {program.duration}</span>
+                  <span className="font-semibold text-gray-300"><strong className="text-accent-green">Sessions:</strong> {program.sessions}</span>
                 </div>
               </div>
             ))}
@@ -189,11 +189,11 @@ const Services = () => {
       </section>
 
       {/* Facility Features */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#171A26]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">World-Class Facilities</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">WORLD-CLASS FACILITIES</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               State-of-the-art equipment and amenities for the ultimate fitness experience
             </p>
           </div>
@@ -201,31 +201,31 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4 bg-[#15171C] p-6 rounded-2xl hover:border border-primary-green transition-all duration-300">
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <Dumbbell className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Equipment</h3>
-                    <p className="text-gray-600">Latest fitness equipment from top brands, regularly maintained and updated.</p>
+                    <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">Premium Equipment</h3>
+                    <p className="text-gray-400 leading-relaxed">Latest fitness equipment from top brands, regularly maintained and updated.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4 bg-[#15171C] p-6 rounded-2xl hover:border border-primary-green transition-all duration-300">
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">24/7 Access</h3>
-                    <p className="text-gray-600">Work out on your schedule with round-the-clock gym access for members.</p>
+                    <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">24/7 Access</h3>
+                    <p className="text-gray-400 leading-relaxed">Work out on your schedule with round-the-clock gym access for members.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4 bg-[#15171C] p-6 rounded-2xl hover:border border-primary-green transition-all duration-300">
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <Shield className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Clean & Safe</h3>
-                    <p className="text-gray-600">Rigorous cleaning protocols and safety measures to ensure your wellbeing.</p>
+                    <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">Clean & Safe</h3>
+                    <p className="text-gray-400 leading-relaxed">Rigorous cleaning protocols and safety measures to ensure your wellbeing.</p>
                   </div>
                 </div>
               </div>
@@ -234,7 +234,7 @@ const Services = () => {
               <img
                 src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Modern gym facility"
-                className="rounded-lg shadow-xl"
+                className="rounded-2xl border border-gray-700 hover:border-primary-green transition-all duration-300"
               />
             </div>
           </div>
@@ -242,41 +242,47 @@ const Services = () => {
       </section>
 
       {/* Certification CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow-500 to-orange-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-[#15171C] relative overflow-hidden">
+        {/* Blurred circles */}
+        <div className="absolute top-10 left-10 w-80 h-80 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="flex justify-center items-center mb-6">
-              <GraduationCap className="h-16 w-16 text-white mr-4" />
+              <div className="bg-gradient-to-r from-primary-green to-accent-green p-4 rounded-full">
+                <GraduationCap className="h-16 w-16 text-white" />
+              </div>
             </div>
-            <h2 className="text-4xl font-bold mb-6">Become a Certified Fitness Professional</h2>
-            <p className="text-xl mb-8 max-w-4xl mx-auto">
-              Join India's first culturally-integrated fitness trainer certification program. 
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">BECOME A CERTIFIED FITNESS PROFESSIONAL</h2>
+            <p className="text-xl text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Join India's first culturally-integrated fitness trainer certification program.
               Combine modern exercise science with traditional wellness practices.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">₹45,000</div>
-                <div className="text-sm opacity-90">Starting from</div>
+              <div className="text-center bg-[#171A26] border border-gray-700 p-6 rounded-2xl hover:border-primary-green transition-all duration-300">
+                <div className="text-3xl font-black text-primary-green mb-2">₹45,000</div>
+                <div className="text-sm text-gray-400 uppercase tracking-wide">Starting from</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">95%</div>
-                <div className="text-sm opacity-90">Job placement rate</div>
+              <div className="text-center bg-[#171A26] border border-gray-700 p-6 rounded-2xl hover:border-primary-green transition-all duration-300">
+                <div className="text-3xl font-black text-accent-green mb-2">95%</div>
+                <div className="text-sm text-gray-400 uppercase tracking-wide">Job placement rate</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">6-8</div>
-                <div className="text-sm opacity-90">Months duration</div>
+              <div className="text-center bg-[#171A26] border border-gray-700 p-6 rounded-2xl hover:border-primary-green transition-all duration-300">
+                <div className="text-3xl font-black text-white mb-2">6-8</div>
+                <div className="text-sm text-gray-400 uppercase tracking-wide">Months duration</div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/certification"
-                className="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                className="bg-white text-black px-8 py-4 rounded-xl font-black text-lg uppercase tracking-wide hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
               >
                 Explore Certification Program
               </a>
               <a
                 href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-all duration-200"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-black text-lg uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-200"
               >
                 Book Info Session
               </a>
@@ -286,22 +292,22 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-red-600 to-green-800 text-white">
+      <section className="py-20 bg-[#171A26]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">READY TO GET STARTED?</h2>
+          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
             Choose the service that fits your goals and start your transformation today
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="/membership"
-              className="bg-white text-primary-green px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+              className="bg-white text-black px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
             >
               View Membership Plans
             </a>
             <a
               href="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-200"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-200"
             >
               Schedule Consultation
             </a>
