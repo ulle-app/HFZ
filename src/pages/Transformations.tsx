@@ -69,9 +69,9 @@ const Transformations = () => {
       {/* Hero Section with blurred circles */}
       <section className="relative py-32 bg-[#15171C] text-white overflow-hidden">
         {/* Blurred circles */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-[#FF3278] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 right-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-primary-green opacity-10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">SUCCESS STORIES</h1>
@@ -88,7 +88,7 @@ const Transformations = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-10 w-10 text-white" />
                 </div>
                 <div className="text-3xl md:text-4xl font-black text-white mb-2">{stat.value}</div>
@@ -137,7 +137,7 @@ const Transformations = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
                         <div className="absolute bottom-4 left-4">
-                          <span className="bg-[#FF3278] text-white px-4 py-2 rounded-full text-lg font-black">AFTER</span>
+                          <span className="bg-primary-green text-white px-4 py-2 rounded-full text-lg font-black">AFTER</span>
                         </div>
                       </div>
                     </div>
@@ -147,11 +147,11 @@ const Transformations = () => {
                   <div className="bg-[#171A26] border border-gray-700 rounded-2xl p-6">
                     <div className="grid grid-cols-2 gap-6 text-center">
                       <div>
-                        <div className="text-3xl font-black text-[#FF3278] mb-2">{transformation.duration}</div>
+                        <div className="text-3xl font-black text-primary-green mb-2">{transformation.duration}</div>
                         <div className="text-sm text-gray-400 font-semibold uppercase tracking-wide">Duration</div>
                       </div>
                       <div>
-                        <div className="text-3xl font-black text-[#FFDB17] mb-2">{transformation.weightLoss}</div>
+                        <div className="text-3xl font-black text-accent-green mb-2">{transformation.weightLoss}</div>
                         <div className="text-sm text-gray-400 font-semibold uppercase tracking-wide">Result</div>
                       </div>
                     </div>
@@ -167,7 +167,7 @@ const Transformations = () => {
                       <span>•</span>
                       <span>{transformation.location}</span>
                     </div>
-                    <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] text-white px-6 py-3 rounded-full inline-block font-black text-sm uppercase tracking-wide mb-8">
+                    <div className="bg-gradient-to-r from-primary-green to-accent-green text-white px-6 py-3 rounded-full inline-block font-black text-sm uppercase tracking-wide mb-8">
                       {transformation.program}
                     </div>
                   </div>
@@ -178,7 +178,7 @@ const Transformations = () => {
                       "{transformation.story}"
                     </p>
                     
-                    <div className="border-l-4 border-[#FF3278] pl-6 mb-8 bg-[#15171C] rounded-r-xl p-4">
+                    <div className="border-l-4 border-primary-green pl-6 mb-8 bg-[#15171C] rounded-r-xl p-4">
                       <p className="text-gray-300 italic text-lg">
                         "{transformation.testimonial}"
                       </p>
@@ -189,7 +189,7 @@ const Transformations = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {transformation.achievements.map((achievement, idx) => (
                           <div key={idx} className="flex items-center space-x-3 bg-[#15171C] p-3 rounded-xl">
-                            <Star className="h-5 w-5 text-[#FFDB17] flex-shrink-0" />
+                            <Star className="h-5 w-5 text-accent-green flex-shrink-0" />
                             <span className="text-gray-300 font-medium">{achievement}</span>
                           </div>
                         ))}

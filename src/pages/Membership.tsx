@@ -87,8 +87,8 @@ const Membership = () => {
       <section className="py-20 bg-[#15171C] text-white relative overflow-hidden">
         {/* Cult.fit Style Blurred Circles */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -108,32 +108,32 @@ const Membership = () => {
                 key={index}
                 className={`relative bg-[#15171C] border-2 rounded-2xl transition-all duration-300 cursor-pointer group ${
                   selectedPlan === plan.name
-                    ? 'border-[#FF3278] scale-105'
+                    ? 'border-primary-green scale-105'
                     : 'border-gray-700 hover:border-gray-600'
-                } ${plan.popular ? 'ring-2 ring-[#FF3278]' : ''}`}
+                } ${plan.popular ? 'ring-2 ring-primary-green' : ''}`}
                 onClick={() => setSelectedPlan(plan.name)}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#FF3278] text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-green text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
                     Most Popular
                   </div>
                 )}
                 <div className="p-8 text-center">
                   <div className="flex justify-center mb-6">
                     {plan.icon && React.createElement(plan.icon, { 
-                      className: `h-10 w-10 ${selectedPlan === plan.name ? 'text-[#FF3278]' : 'text-gray-400'}` 
+                      className: `h-10 w-10 ${selectedPlan === plan.name ? 'text-primary-green' : 'text-gray-400'}`
                     })}
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-white uppercase tracking-wide">{plan.name}</h3>
                   <div className="flex justify-center items-end mb-6">
-                    <span className="text-4xl font-black text-[#FF3278] mr-2">₹{plan.price}</span>
+                    <span className="text-4xl font-black text-primary-green mr-2">₹{plan.price}</span>
                     <span className="text-gray-400 text-lg">/ {plan.period}</span>
                   </div>
                   <p className="text-gray-400 mb-8">{plan.description}</p>
                   <ul className="text-left mb-8 space-y-3">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start text-gray-300">
-                        <Check className="h-5 w-5 text-[#FFDB17] mr-3 mt-0.5 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-accent-green mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -174,10 +174,10 @@ const Membership = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {addOns.map((addon, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 p-6 rounded-2xl hover:border-[#FF3278] transition-all duration-300 group">
+              <div key={index} className="bg-[#171A26] border border-gray-700 p-6 rounded-2xl hover:border-primary-green transition-all duration-300 group">
                 <div className="text-center">
                   <h3 className="text-lg font-bold text-white mb-3 uppercase tracking-wide">{addon.name}</h3>
-                  <div className="text-2xl font-black text-[#FF3278] mb-4">₹{addon.price}</div>
+                  <div className="text-2xl font-black text-primary-green mb-4">₹{addon.price}</div>
                   <p className="text-sm text-gray-400 mb-6">{addon.description}</p>
                   <button className="text-white font-bold border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition-all duration-300">
                     ADD TO PLAN
@@ -203,33 +203,33 @@ const Membership = () => {
               <h3 className="text-2xl font-bold text-white mb-8 uppercase">Benefits for Your Team</h3>
               <ul className="space-y-4">
                 <li className="flex items-center">
-                  <Check className="h-5 w-5 text-[#FFDB17] mr-3" />
+                  <Check className="h-5 w-5 text-accent-green mr-3" />
                   <span className="text-gray-300">Discounted membership rates for employees</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="h-5 w-5 text-[#FFDB17] mr-3" />
+                  <Check className="h-5 w-5 text-accent-green mr-3" />
                   <span className="text-gray-300">Flexible billing and payment options</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="h-5 w-5 text-[#FFDB17] mr-3" />
+                  <Check className="h-5 w-5 text-accent-green mr-3" />
                   <span className="text-gray-300">Wellness workshops and seminars</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="h-5 w-5 text-[#FFDB17] mr-3" />
+                  <Check className="h-5 w-5 text-accent-green mr-3" />
                   <span className="text-gray-300">Team building fitness challenges</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="h-5 w-5 text-[#FFDB17] mr-3" />
+                  <Check className="h-5 w-5 text-accent-green mr-3" />
                   <span className="text-gray-300">Dedicated corporate account manager</span>
                 </li>
               </ul>
             </div>
-            <div className="bg-[#FF3278] p-8 rounded-2xl">
+            <div className="bg-primary-green p-8 rounded-2xl">
               <h4 className="text-xl font-bold text-white mb-4 uppercase">Get Started Today</h4>
               <p className="text-white mb-6 opacity-90">
                 Contact us to learn about our corporate wellness packages and how we can customize a program for your organization.
               </p>
-              <button className="bg-white text-[#FF3278] px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors uppercase tracking-wide">
+              <button className="bg-white text-primary-green px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors uppercase tracking-wide">
                 Contact Sales Team
               </button>
             </div>

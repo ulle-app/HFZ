@@ -34,9 +34,9 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Dumbbell className="h-7 w-7 text-[#FF3278]" />
+            <Dumbbell className="h-7 w-7 text-primary-green" />
             <span className="text-xl font-black text-white">
-              HEAL<span className="text-[#FF3278]">FIT</span>
+              HEAL<span className="text-primary-green">FIT</span>
             </span>
           </Link>
 
@@ -59,7 +59,7 @@ const Header = () => {
                     to={item.href!}
                     className={`font-medium transition-colors duration-200 ${
                       isActive(item.href!)
-                        ? 'text-[#FF3278]'
+                        ? 'text-primary-green'
                         : 'text-gray-300 hover:text-white'
                     }`}
                   >
@@ -109,7 +109,7 @@ const Header = () => {
                   <div>
                     <button
                       onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
-                      className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50"
+                      className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-green hover:bg-gray-800"
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`h-5 w-5 transform transition-transform ${openDropdown === item.name ? 'rotate-188' : ''}`} />
@@ -120,7 +120,7 @@ const Header = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-red-600 hover:bg-gray-50"
+                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-green hover:bg-gray-800"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {child.name}
@@ -134,8 +134,8 @@ const Header = () => {
                     to={item.href!}
                     className={`block px-3 py-2 rounded-md text-base font-medium ${
                       isActive(item.href!)
-                        ? 'text-red-600 bg-green-50'
-                        : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
+                        ? 'text-primary-green bg-black'
+                        : 'text-gray-300 hover:text-primary-green hover:bg-gray-800'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

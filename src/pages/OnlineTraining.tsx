@@ -134,9 +134,9 @@ const OnlineTraining = () => {
       {/* Hero Section with blurred circles */}
       <section className="relative py-32 bg-[#15171C] text-white overflow-hidden">
         {/* Blurred circles */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-[#FF3278] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 right-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-primary-green opacity-10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">ONLINE TRAINING</h1>
@@ -153,7 +153,7 @@ const OnlineTraining = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-10 w-10 text-white" />
                 </div>
                 <div className="text-3xl md:text-4xl font-black text-white mb-2">{stat.value}</div>
@@ -175,8 +175,8 @@ const OnlineTraining = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {onlinePrograms.map((program, index) => (
-              <div key={program.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300">
+            {onlinePrograms.map((program) => (
+              <div key={program.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-primary-green transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={program.image}
@@ -186,14 +186,14 @@ const OnlineTraining = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   
                   {/* Live indicator */}
-                  <div className="absolute top-4 left-4 flex items-center space-x-2 bg-[#FF3278] px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 flex items-center space-x-2 bg-primary-green px-3 py-1 rounded-full">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                     <span className="text-white text-sm font-black uppercase tracking-wide">Live</span>
                   </div>
                   
                   {/* Rating */}
                   <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
-                    <Star className="h-4 w-4 text-[#FFDB17] fill-current" />
+                    <Star className="h-4 w-4 text-accent-green fill-current" />
                     <span className="text-sm font-bold text-white">{program.rating}</span>
                   </div>
                   
@@ -205,7 +205,7 @@ const OnlineTraining = () => {
                         <Users className="h-4 w-4 text-gray-300" />
                         <span className="text-sm text-gray-300">{program.participants} members</span>
                       </div>
-                      <div className="text-[#FFDB17] font-black">{program.price}</div>
+                      <div className="text-accent-green font-black">{program.price}</div>
                     </div>
                   </div>
                 </div>
@@ -221,14 +221,14 @@ const OnlineTraining = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
-                          <Calendar className="h-4 w-4 text-[#FF3278]" />
+                          <Calendar className="h-4 w-4 text-primary-green" />
                           <span className="font-semibold text-white">Schedule</span>
                         </div>
                         <p className="text-gray-400">{program.schedule}</p>
                       </div>
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
-                          <Clock className="h-4 w-4 text-[#FFDB17]" />
+                          <Clock className="h-4 w-4 text-accent-green" />
                           <span className="font-semibold text-white">Duration</span>
                         </div>
                         <p className="text-gray-400">{program.duration}</p>
@@ -242,7 +242,7 @@ const OnlineTraining = () => {
                     <div className="grid grid-cols-2 gap-2">
                       {program.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="h-3 w-3 text-[#FFDB17] flex-shrink-0" />
+                          <CheckCircle className="h-3 w-3 text-accent-green flex-shrink-0" />
                           <span className="text-xs text-gray-400">{feature}</span>
                         </div>
                       ))}
@@ -276,14 +276,14 @@ const OnlineTraining = () => {
                 onClick={() => setSelectedPackage(pkg.name)}
                 className={`bg-[#15171C] border border-gray-700 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 transform hover:scale-105 ${
                   selectedPackage === pkg.name
-                    ? 'ring-2 ring-[#FF3278] border-[#FF3278]'
+                    ? 'ring-2 ring-primary-green border-primary-green'
                     : pkg.popular
-                      ? 'ring-2 ring-[#FFDB17] border-[#FFDB17]'
-                      : 'hover:border-[#FF3278]'
+                      ? 'ring-2 ring-accent-green border-accent-green'
+                      : 'hover:border-primary-green'
                 }`}
               >
                 {pkg.popular && (
-                  <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] text-white text-center py-3 font-black uppercase tracking-wide">
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green text-white text-center py-3 font-black uppercase tracking-wide">
                     Most Popular
                   </div>
                 )}
@@ -298,7 +298,7 @@ const OnlineTraining = () => {
                   <ul className="space-y-4 mb-10">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-[#FFDB17] flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-accent-green flex-shrink-0 mt-0.5" />
                         <span className="text-gray-300 leading-relaxed">{feature}</span>
                       </li>
                     ))}
@@ -330,8 +330,8 @@ const OnlineTraining = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-[#FF3278] transition-all duration-300">
-                <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-primary-green transition-all duration-300">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wide">{feature.title}</h3>
@@ -354,7 +354,7 @@ const OnlineTraining = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-8 hover:border-[#FF3278] transition-all duration-300">
+              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-8 hover:border-primary-green transition-all duration-300">
                 <div className="flex items-center mb-6">
                   <img
                     src={testimonial.image}
@@ -364,7 +364,7 @@ const OnlineTraining = () => {
                   <div>
                     <h3 className="text-lg font-black text-white">{testimonial.name}</h3>
                     <p className="text-sm text-gray-400">{testimonial.location}</p>
-                    <div className="bg-[#FF3278] text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mt-1 inline-block">
+                    <div className="bg-primary-green text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mt-1 inline-block">
                       {testimonial.program}
                     </div>
                   </div>

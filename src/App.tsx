@@ -15,8 +15,11 @@ import Challenges from './pages/Challenges';
 import OnlineTraining from './pages/OnlineTraining';
 
 function App() {
+  // Use basename only in production for GitHub Pages
+  const basename = import.meta.env.PROD ? '/HFZ' : '';
+
   return (
-    <Router basename="/HFZ">
+    <Router basename={basename}>
       <div className="min-h-screen bg-[#15171C]">
         <Header />
         <main>

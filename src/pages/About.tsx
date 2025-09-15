@@ -52,8 +52,8 @@ const About = () => {
       <section className="py-20 bg-[#15171C] text-white relative overflow-hidden">
         {/* Cult.fit Style Blurred Circles */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -88,7 +88,7 @@ const About = () => {
                 alt="Our gym facility"
                 className="rounded-2xl"
               />
-              <div className="absolute -bottom-6 -right-6 bg-[#FF3278] text-white p-6 rounded-2xl">
+              <div className="absolute -bottom-6 -right-6 bg-primary-green text-white p-6 rounded-2xl">
                 <div className="text-3xl font-black">10+</div>
                 <div className="text-sm font-medium uppercase">Years Excellence</div>
               </div>
@@ -110,7 +110,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-[#FF3278] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#FFDB17] transition-colors duration-300">
+                <div className="bg-primary-green w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-green transition-colors duration-300">
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wide">{value.title}</h3>
@@ -145,7 +145,7 @@ const About = () => {
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-xl font-bold mb-2 uppercase tracking-wide">{member.name}</h3>
-                    <p className="text-[#FF3278] font-semibold mb-3 text-sm uppercase">{member.role}</p>
+                    <p className="text-primary-green font-semibold mb-3 text-sm uppercase">{member.role}</p>
                     <p className="text-gray-200 text-sm leading-relaxed">{member.bio}</p>
                   </div>
                 </div>

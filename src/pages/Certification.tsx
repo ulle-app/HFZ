@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, Award, Users, Clock, Star, CheckCircle, BookOpen, Dumbbell, Heart, Target, Calendar, Phone, Mail, MapPin, IndianRupee } from 'lucide-react';
+import { GraduationCap, Award, Users, Star, CheckCircle, BookOpen, Dumbbell, Heart, Target, Calendar, Phone, Mail, MapPin, IndianRupee } from 'lucide-react';
 
 const Certification = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -155,15 +155,15 @@ const Certification = () => {
       <section className="py-20 bg-[#15171C] text-white relative overflow-hidden">
         {/* Cult.fit Style Blurred Circles */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="flex justify-center items-center mb-8">
-              <GraduationCap className="h-16 w-16 text-[#FF3278] mr-4" />
-              <Award className="h-16 w-16 text-[#FFDB17]" />
+              <GraduationCap className="h-16 w-16 text-primary-green mr-4" />
+              <Award className="h-16 w-16 text-accent-green" />
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-8 text-white">
               TRAINER CERTIFICATION
@@ -178,7 +178,7 @@ const Certification = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => setActiveTab('pricing')}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+                className="bg-accent-green hover:bg-accent-green text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105"
               >
                 View Course Packages
               </button>
@@ -314,7 +314,7 @@ const Certification = () => {
                 <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
                   <div className="p-8">
                     <div className="flex items-center mb-6">
-                      <div className="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                      <div className="bg-primary-green w-12 h-12 rounded-full flex items-center justify-center mr-4">
                         <module.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -486,26 +486,26 @@ const Certification = () => {
               ))}
             </div>
 
-            <div className="bg-yellow-50 border border-yellow-200 p-8 rounded-xl">
+            <div className="bg-gray-50 border border-gray-200 p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Payment Options & Benefits</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-4">Flexible Payment Plans</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       0% interest EMI options up to 12 months
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Early bird discount: 15% off (first 50 students)
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Student discount: 10% off with valid ID
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Corporate sponsorship programs available
                     </li>
                   </ul>
@@ -514,19 +514,19 @@ const Certification = () => {
                   <h4 className="text-xl font-semibold text-gray-900 mb-4">Scholarship Opportunities</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Merit-based scholarships up to 50% off
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Need-based financial assistance
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Women empowerment scholarships
                     </li>
                     <li className="flex items-center text-gray-700">
-                      <CheckCircle className="h-5 w-5 text-yellow-600 mr-3" />
+                      <CheckCircle className="h-5 w-5 text-accent-green mr-3" />
                       Rural development program support
                     </li>
                   </ul>
@@ -622,8 +622,8 @@ const Certification = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Next Batch Starts</h3>
             <div className="text-6xl font-bold text-green-600 mb-2">15</div>
             <div className="text-xl text-gray-600 mb-4">Days Remaining</div>
-            <div className="bg-yellow-100 p-4 rounded-lg">
-              <p className="text-yellow-800 font-medium">
+            <div className="bg-gray-100 p-4 rounded-lg">
+              <p className="text-gray-800 font-medium">
                 🎉 Early Bird Special: Save ₹10,000 - Only 12 spots left!
               </p>
             </div>

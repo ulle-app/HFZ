@@ -29,7 +29,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, li
             <p className="text-sm text-gray-200 mb-4 line-clamp-2">
               {description}
             </p>
-            <div className="flex items-center text-sm font-medium group-hover:text-[#FF3278] transition-colors duration-300">
+            <div className="flex items-center text-sm font-medium group-hover:text-primary-green transition-colors duration-300">
               <span>EXPLORE</span>
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </div>

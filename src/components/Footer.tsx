@@ -10,9 +10,9 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Dumbbell className="h-6 w-6 text-[#FF3278]" />
+              <Dumbbell className="h-6 w-6 text-primary-green" />
               <span className="text-xl font-black">
-                HEAL<span className="text-[#FF3278]">FIT</span>
+                HEAL<span className="text-primary-green">FIT</span>
               </span>
             </div>
             <p className="text-gray-300 mb-4">
@@ -20,10 +20,10 @@ const Footer = () => {
               Professional trainers, modern equipment, and a supportive community await you.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-gray-400 hover:text-[#FF3278] cursor-pointer transition-colors" />
-              <Twitter className="h-5 w-5 text-gray-400 hover:text-[#FF3278] cursor-pointer transition-colors" />
-              <Instagram className="h-5 w-5 text-gray-400 hover:text-[#FF3278] cursor-pointer transition-colors" />
-              <Youtube className="h-5 w-5 text-gray-400 hover:text-[#FF3278] cursor-pointer transition-colors" />
+              <Facebook className="h-5 w-5 text-gray-400 hover:text-primary-green cursor-pointer transition-colors" />
+              <Twitter className="h-5 w-5 text-gray-400 hover:text-primary-green cursor-pointer transition-colors" />
+              <Instagram className="h-5 w-5 text-gray-400 hover:text-primary-green cursor-pointer transition-colors" />
+              <Youtube className="h-5 w-5 text-gray-400 hover:text-primary-green cursor-pointer transition-colors" />
             </div>
           </div>
 
@@ -56,15 +56,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-red-600" />
+                <Phone className="h-4 w-4 text-primary-green" />
                 <span className="text-gray-300">080888 64412</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-red-600" />
+                <Mail className="h-4 w-4 text-primary-green" />
                 <span className="text-gray-300">info@healfitnesszone.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-red-600" />
+                <MapPin className="h-4 w-4 text-primary-green" />
                 <span className="text-gray-300">3115, Hoysala Circle, Mysuru, Karnataka 570017</span>
               </div>
             </div>

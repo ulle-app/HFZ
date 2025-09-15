@@ -105,8 +105,8 @@ const Services = () => {
       <section className="py-20 bg-[#15171C] text-white relative overflow-hidden">
         {/* Cult.fit Style Blurred Circles */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-10 w-80 h-80 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-80 h-80 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -141,7 +141,7 @@ const Services = () => {
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <div className="flex items-center mb-3">
-                      <service.icon className="h-6 w-6 text-[#FF3278] mr-3" />
+                      <service.icon className="h-6 w-6 text-primary-green mr-3" />
                       <h3 className="text-xl font-bold uppercase tracking-wide">{service.title}</h3>
                     </div>
                     <p className="text-sm text-gray-200 mb-4">{service.description}</p>
@@ -295,7 +295,7 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/membership"
-              className="bg-white text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+              className="bg-white text-primary-green px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
             >
               View Membership Plans
             </a>

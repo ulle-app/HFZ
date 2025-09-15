@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Calendar, Users, Target, Star, Clock, Award, TrendingUp } from 'lucide-react';
+import { Trophy, Calendar, Users, Star, Clock, Award, TrendingUp } from 'lucide-react';
 
 const Challenges = () => {
   const currentChallenges = [
@@ -116,9 +116,9 @@ const Challenges = () => {
       {/* Hero Section with blurred circles */}
       <section className="relative py-32 bg-[#15171C] text-white overflow-hidden">
         {/* Blurred circles */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-[#FF3278] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 right-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-primary-green opacity-10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">FITNESS CHALLENGES</h1>
@@ -135,7 +135,7 @@ const Challenges = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {challengeStats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-10 w-10 text-white" />
                 </div>
                 <div className="text-3xl md:text-4xl font-black text-white mb-2">{stat.value}</div>
@@ -157,8 +157,8 @@ const Challenges = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {currentChallenges.map((challenge, index) => (
-              <div key={challenge.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300">
+            {currentChallenges.map((challenge) => (
+              <div key={challenge.id} className="group bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden hover:border-primary-green transition-all duration-300">
                 <div className="relative">
                   <img
                     src={challenge.image}
@@ -171,8 +171,8 @@ const Challenges = () => {
                   <div className="absolute top-4 right-4">
                     <span className={`px-4 py-2 rounded-full text-sm font-black uppercase tracking-wide ${
                       challenge.status === 'Active' 
-                        ? 'bg-[#FF3278] text-white' 
-                        : 'bg-[#FFDB17] text-black'
+                        ? 'bg-primary-green text-white'
+                        : 'bg-accent-green text-black'
                     }`}>
                       {challenge.status}
                     </span>
@@ -196,11 +196,11 @@ const Challenges = () => {
 
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-2">
-                      <Users className="h-5 w-5 text-[#FF3278]" />
+                      <Users className="h-5 w-5 text-primary-green" />
                       <span className="text-sm font-semibold text-gray-300">{challenge.participants} joined</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Clock className="h-5 w-5 text-[#FFDB17]" />
+                      <Clock className="h-5 w-5 text-accent-green" />
                       <span className="text-sm font-semibold text-gray-300">{challenge.duration}</span>
                     </div>
                   </div>
@@ -208,10 +208,10 @@ const Challenges = () => {
                   {/* Prize Info */}
                   <div className="bg-[#15171C] border border-gray-600 rounded-xl p-4 mb-6">
                     <div className="flex items-center space-x-2 mb-2">
-                      <Trophy className="h-5 w-5 text-[#FFDB17]" />
+                      <Trophy className="h-5 w-5 text-accent-green" />
                       <span className="text-sm font-black text-white uppercase tracking-wide">Prize</span>
                     </div>
-                    <p className="text-[#FF3278] font-bold">{challenge.prize}</p>
+                    <p className="text-primary-green font-bold">{challenge.prize}</p>
                     <p className="text-xs text-gray-400 mt-1">Difficulty: {challenge.difficulty}</p>
                   </div>
 
@@ -221,7 +221,7 @@ const Challenges = () => {
                     <div className="grid grid-cols-2 gap-2">
                       {challenge.benefits.slice(0, 4).map((benefit, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <Star className="h-3 w-3 text-[#FFDB17] flex-shrink-0" />
+                          <Star className="h-3 w-3 text-accent-green flex-shrink-0" />
                           <span className="text-xs text-gray-400">{benefit}</span>
                         </div>
                       ))}
@@ -250,7 +250,7 @@ const Challenges = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {upcomingChallenges.map((challenge, index) => (
-              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300 group">
+              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl overflow-hidden hover:border-primary-green transition-all duration-300 group">
                 <div className="relative">
                   <img
                     src={challenge.image}
@@ -269,21 +269,21 @@ const Challenges = () => {
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4 text-[#FF3278]" />
+                        <Calendar className="h-4 w-4 text-primary-green" />
                         <span className="text-sm text-gray-400">Starts</span>
                       </div>
                       <span className="text-sm font-semibold text-white">{challenge.startDate}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Clock className="h-4 w-4 text-[#FFDB17]" />
+                        <Clock className="h-4 w-4 text-accent-green" />
                         <span className="text-sm text-gray-400">Duration</span>
                       </div>
                       <span className="text-sm font-semibold text-white">{challenge.duration}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Users className="h-4 w-4 text-[#FF3278]" />
+                        <Users className="h-4 w-4 text-primary-green" />
                         <span className="text-sm text-gray-400">Expected</span>
                       </div>
                       <span className="text-sm font-semibold text-white">{challenge.estimatedParticipants}+</span>
@@ -312,23 +312,23 @@ const Challenges = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pastWinners.map((winner, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-[#FF3278] transition-all duration-300">
+              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-primary-green transition-all duration-300">
                 <div className="relative inline-block mb-6">
                   <img
                     src={winner.image}
                     alt={winner.name}
                     className="w-24 h-24 rounded-full object-cover mx-auto"
                   />
-                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#FF3278] to-[#FFDB17] p-2 rounded-full">
+                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-primary-green to-accent-green p-2 rounded-full">
                     <Trophy className="h-4 w-4 text-white" />
                   </div>
                 </div>
                 
                 <h3 className="text-2xl font-black text-white mb-2">{winner.name}</h3>
-                <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] text-white px-4 py-2 rounded-full text-sm font-black uppercase tracking-wide mb-4 inline-block">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green text-white px-4 py-2 rounded-full text-sm font-black uppercase tracking-wide mb-4 inline-block">
                   {winner.challenge}
                 </div>
-                <div className="text-[#FFDB17] font-black text-lg mb-4">{winner.achievement}</div>
+                <div className="text-accent-green font-black text-lg mb-4">{winner.achievement}</div>
                 <p className="text-gray-300 text-sm italic leading-relaxed">"{winner.testimonial}"</p>
               </div>
             ))}

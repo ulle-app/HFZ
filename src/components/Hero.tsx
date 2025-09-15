@@ -16,9 +16,9 @@ const Hero = () => {
       
       {/* Cult.fit Style Blurred Color Circles */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF3278] opacity-30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#FFDB17] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-cyan-400 opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-primary-green opacity-30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-primary-green-light opacity-15 rounded-full blur-3xl"></div>
       </div>
       
       {/* Content */}
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-8xl xl:text-9xl font-black text-white mb-8 leading-[0.9] tracking-tight">
             <span className="block mb-4">TRANSFORM</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF3278] via-[#FFDB17] to-cyan-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-green via-accent-green to-primary-green-light">
               YOUR LIMITS
             </span>
           </h1>

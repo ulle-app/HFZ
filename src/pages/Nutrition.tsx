@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple, Clock, Target, BookOpen, CheckCircle, Star, Utensils, Heart } from 'lucide-react';
+import { Apple, Target, BookOpen, CheckCircle, Star, Utensils, Heart } from 'lucide-react';
 
 const Nutrition = () => {
   const services = [
@@ -134,9 +134,9 @@ const Nutrition = () => {
       {/* Hero Section with blurred circles */}
       <section className="relative py-32 bg-[#15171C] text-white overflow-hidden">
         {/* Blurred circles */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-[#FF3278] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 right-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-primary-green opacity-10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">NUTRITION GUIDANCE</h1>
@@ -159,7 +159,7 @@ const Nutrition = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="group bg-[#15171C] border border-gray-700 rounded-2xl overflow-hidden hover:border-[#FF3278] transition-all duration-300">
+              <div key={index} className="group bg-[#15171C] border border-gray-700 rounded-2xl overflow-hidden hover:border-primary-green transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={service.image}
@@ -167,7 +167,7 @@ const Nutrition = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#FF3278] to-[#FFDB17] p-3 rounded-xl">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-primary-green to-accent-green p-3 rounded-xl">
                     <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -181,7 +181,7 @@ const Nutrition = () => {
                   <ul className="space-y-3">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center space-x-3">
-                        <CheckCircle className="h-4 w-4 text-[#FFDB17] flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-accent-green flex-shrink-0" />
                         <span className="text-gray-300 text-sm">{feature}</span>
                       </li>
                     ))}
@@ -205,16 +205,16 @@ const Nutrition = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {mealPlans.map((plan, index) => (
-              <div key={index} className={`bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden transition-all duration-300 ${plan.popular ? 'ring-2 ring-[#FF3278] transform scale-105' : 'hover:border-[#FF3278]'}`}>
+              <div key={index} className={`bg-[#171A26] border border-gray-700 rounded-2xl overflow-hidden transition-all duration-300 ${plan.popular ? 'ring-2 ring-primary-green transform scale-105' : 'hover:border-primary-green'}`}>
                 {plan.popular && (
-                  <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] text-white text-center py-3 font-black uppercase tracking-wide">
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green text-white text-center py-3 font-black uppercase tracking-wide">
                     Most Popular
                   </div>
                 )}
                 
                 <div className="p-8">
                   <h3 className="text-2xl font-black text-white mb-2">{plan.name}</h3>
-                  <div className="text-[#FF3278] font-bold mb-2">{plan.calories}</div>
+                  <div className="text-primary-green font-bold mb-2">{plan.calories}</div>
                   <div className="text-gray-400 mb-8">{plan.duration}</div>
                   
                   <div className="text-4xl font-black text-white mb-8">
@@ -225,7 +225,7 @@ const Nutrition = () => {
                   <ul className="space-y-4 mb-10">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-[#FFDB17] flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-accent-green flex-shrink-0 mt-0.5" />
                         <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
                       </li>
                     ))}
@@ -257,7 +257,7 @@ const Nutrition = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {indianSuperfoods.map((food, index) => (
-              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-6 text-center group hover:border-[#FF3278] transition-all duration-300 transform hover:scale-105">
+              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-6 text-center group hover:border-primary-green transition-all duration-300 transform hover:scale-105">
                 <div className="relative mb-4 overflow-hidden rounded-full">
                   <img
                     src={food.image}
@@ -285,9 +285,9 @@ const Nutrition = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {nutritionTips.map((section, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 hover:border-[#FF3278] transition-all duration-300">
+              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 hover:border-primary-green transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] p-2 rounded-lg">
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green p-2 rounded-lg">
                     <BookOpen className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-lg font-black text-white uppercase tracking-wide">{section.category}</h3>
@@ -296,7 +296,7 @@ const Nutrition = () => {
                 <ul className="space-y-4">
                   {section.tips.map((tip, idx) => (
                     <li key={idx} className="flex items-start space-x-3">
-                      <Star className="h-4 w-4 text-[#FFDB17] mt-0.5 flex-shrink-0" />
+                      <Star className="h-4 w-4 text-accent-green mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-gray-300 leading-relaxed">{tip}</span>
                     </li>
                   ))}

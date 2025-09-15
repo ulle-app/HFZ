@@ -3,6 +3,17 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          green: '#00FF88',
+          'green-dark': '#00CC6A',
+          'green-light': '#33FFAA',
+        },
+        accent: {
+          green: '#22FF77',
+          'green-neon': '#00FF66',
+        }
+      },
       keyframes: {
         'fade-in-up': {
           '0%': {

@@ -56,9 +56,9 @@ const Contact = () => {
       {/* Hero Section with blurred circles */}
       <section className="relative py-32 bg-[#15171C] text-white overflow-hidden">
         {/* Blurred circles */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-[#FF3278] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 right-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-primary-green opacity-10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">GET IN TOUCH</h1>
@@ -74,8 +74,8 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
-              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-8 text-center group hover:border-[#FF3278] transition-all duration-300 transform hover:scale-105">
-                <div className="bg-[#FF3278] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#FFDB17] transition-colors">
+              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-8 text-center group hover:border-primary-green transition-all duration-300 transform hover:scale-105">
+                <div className="bg-primary-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-green transition-colors">
                   <info.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-black text-white mb-4">{info.title}</h3>
@@ -111,7 +111,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-[#FF3278] focus:border-transparent transition-all placeholder-gray-500"
+                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all placeholder-gray-500"
                       placeholder="Your full name"
                     />
                   </div>
@@ -126,7 +126,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-[#FF3278] focus:border-transparent transition-all placeholder-gray-500"
+                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all placeholder-gray-500"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-[#FF3278] focus:border-transparent transition-all placeholder-gray-500"
+                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all placeholder-gray-500"
                       placeholder="+91-98765-43210"
                     />
                   </div>
@@ -157,7 +157,7 @@ const Contact = () => {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-[#FF3278] focus:border-transparent transition-all"
+                      className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all"
                     >
                       <option value="" className="bg-[#171A26]">Select a subject</option>
                       <option value="membership" className="bg-[#171A26]">Membership Inquiry</option>
@@ -181,7 +181,7 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-[#FF3278] focus:border-transparent transition-all resize-none placeholder-gray-500"
+                    className="w-full px-6 py-4 bg-[#171A26] border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all resize-none placeholder-gray-500"
                     placeholder="Tell us about your fitness goals, questions, or how we can help you..."
                   />
                 </div>
@@ -219,7 +219,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-black text-white mb-6">VISIT OUR LOCATION</h3>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-[#FF3278] p-2 rounded-lg flex-shrink-0">
+                    <div className="bg-primary-green p-2 rounded-lg flex-shrink-0">
                       <MapPin className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -228,7 +228,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="bg-[#FFDB17] p-2 rounded-lg flex-shrink-0">
+                    <div className="bg-accent-green p-2 rounded-lg flex-shrink-0">
                       <Clock className="h-5 w-5 text-black" />
                     </div>
                     <div>
@@ -238,7 +238,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="bg-[#FF3278] p-2 rounded-lg flex-shrink-0">
+                    <div className="bg-primary-green p-2 rounded-lg flex-shrink-0">
                       <Phone className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -263,21 +263,21 @@ const Contact = () => {
             </p>
             
             <div className="flex justify-center space-x-8 mb-16">
-              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-[#FF3278] transition-colors cursor-pointer group">
-                <Facebook className="h-8 w-8 text-gray-400 group-hover:text-[#FF3278] transition-colors" />
+              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-primary-green transition-colors cursor-pointer group">
+                <Facebook className="h-8 w-8 text-gray-400 group-hover:text-primary-green transition-colors" />
               </div>
-              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-[#FF3278] transition-colors cursor-pointer group">
-                <Twitter className="h-8 w-8 text-gray-400 group-hover:text-[#FF3278] transition-colors" />
+              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-primary-green transition-colors cursor-pointer group">
+                <Twitter className="h-8 w-8 text-gray-400 group-hover:text-primary-green transition-colors" />
               </div>
-              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-[#FF3278] transition-colors cursor-pointer group">
-                <Instagram className="h-8 w-8 text-gray-400 group-hover:text-[#FF3278] transition-colors" />
+              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-primary-green transition-colors cursor-pointer group">
+                <Instagram className="h-8 w-8 text-gray-400 group-hover:text-primary-green transition-colors" />
               </div>
-              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-[#FF3278] transition-colors cursor-pointer group">
-                <Youtube className="h-8 w-8 text-gray-400 group-hover:text-[#FF3278] transition-colors" />
+              <div className="bg-[#15171C] border border-gray-700 p-4 rounded-xl hover:border-primary-green transition-colors cursor-pointer group">
+                <Youtube className="h-8 w-8 text-gray-400 group-hover:text-primary-green transition-colors" />
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] p-10 rounded-2xl inline-block max-w-lg">
+            <div className="bg-gradient-to-r from-primary-green to-accent-green p-10 rounded-2xl inline-block max-w-lg">
               <h3 className="text-2xl md:text-3xl font-black text-white mb-6">READY TO START?</h3>
               <p className="text-white mb-8 text-lg">
                 Schedule a free tour and consultation with one of our fitness experts

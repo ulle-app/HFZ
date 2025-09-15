@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Award, Users, Calendar } from 'lucide-react';
+import { Star, Award, Users } from 'lucide-react';
 
 const Trainers = () => {
   const trainers = [
@@ -102,9 +102,9 @@ const Trainers = () => {
       {/* Hero Section with blurred circles */}
       <section className="relative py-32 bg-[#15171C] text-white overflow-hidden">
         {/* Blurred circles */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#FF3278] opacity-20 rounded-full blur-3xl"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-[#FFDB17] opacity-15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-[#FF3278] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-green opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute top-32 right-20 w-80 h-80 bg-accent-green opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-primary-green opacity-10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">MEET OUR TRAINERS</h1>
@@ -120,7 +120,7 @@ const Trainers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {trainers.map((trainer, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl bg-[#15171C] border border-gray-700 hover:border-[#FF3278] transition-all duration-300">
+              <div key={index} className="group relative overflow-hidden rounded-2xl bg-[#15171C] border border-gray-700 hover:border-primary-green transition-all duration-300">
                 {/* Image with overlay */}
                 <div className="relative h-80 overflow-hidden">
                   <img
@@ -134,14 +134,14 @@ const Trainers = () => {
                   
                   {/* Rating badge */}
                   <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
-                    <Star className="h-4 w-4 text-[#FFDB17] fill-current" />
+                    <Star className="h-4 w-4 text-accent-green fill-current" />
                     <span className="text-sm font-bold text-white">{trainer.rating}</span>
                   </div>
                   
                   {/* Bottom overlay with name and role */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-2xl font-black text-white mb-1">{trainer.name}</h3>
-                    <p className="text-[#FF3278] font-bold text-lg">{trainer.role}</p>
+                    <p className="text-primary-green font-bold text-lg">{trainer.role}</p>
                     <p className="text-gray-300 text-sm mt-2 leading-relaxed">{trainer.bio}</p>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ const Trainers = () => {
                       {trainer.specialties.map((specialty, specialtyIndex) => (
                         <span
                           key={specialtyIndex}
-                          className="bg-[#171A26] border border-gray-600 text-gray-300 px-3 py-1 rounded-full text-xs font-medium hover:border-[#FF3278] transition-colors"
+                          className="bg-[#171A26] border border-gray-600 text-gray-300 px-3 py-1 rounded-full text-xs font-medium hover:border-primary-green transition-colors"
                         >
                           {specialty}
                         </span>
@@ -166,11 +166,11 @@ const Trainers = () => {
                   {/* Stats */}
                   <div className="flex justify-between text-sm text-gray-400 mb-6">
                     <div className="flex items-center space-x-2">
-                      <Award className="h-4 w-4 text-[#FFDB17]" />
+                      <Award className="h-4 w-4 text-accent-green" />
                       <span className="font-semibold">{trainer.experience}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Users className="h-4 w-4 text-[#FF3278]" />
+                      <Users className="h-4 w-4 text-primary-green" />
                       <span className="font-semibold">{trainer.sessions.toLocaleString()}+ sessions</span>
                     </div>
                   </div>
@@ -204,8 +204,8 @@ const Trainers = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {philosophyPoints.map((point, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-[#FF3278] transition-all duration-300">
-                <div className="bg-gradient-to-r from-[#FF3278] to-[#FFDB17] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div key={index} className="bg-[#171A26] border border-gray-700 rounded-2xl p-8 text-center group hover:border-primary-green transition-all duration-300">
+                <div className="bg-gradient-to-r from-primary-green to-accent-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   {index === 0 && <Users className="h-8 w-8 text-white" />}
                   {index === 1 && <Award className="h-8 w-8 text-white" />}
                   {index === 2 && <Star className="h-8 w-8 text-white" />}
@@ -232,8 +232,8 @@ const Trainers = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {expertiseAreas.map((expertise, index) => (
-              <div key={index} className="bg-[#15171C] border border-gray-700 p-6 rounded-2xl text-center hover:border-[#FF3278] transition-all duration-300 group">
-                <h3 className="font-black text-white mb-3 group-hover:text-[#FF3278] transition-colors">{expertise}</h3>
+              <div key={index} className="bg-[#15171C] border border-gray-700 p-6 rounded-2xl text-center hover:border-primary-green transition-all duration-300 group">
+                <h3 className="font-black text-white mb-3 group-hover:text-primary-green transition-colors">{expertise}</h3>
                 <p className="text-sm text-gray-400">
                   Expert guidance and proven strategies
                 </p>
