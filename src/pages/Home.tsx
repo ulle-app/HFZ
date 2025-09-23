@@ -4,6 +4,9 @@ import { ArrowRight, Clock, MapPin, Phone, CalendarHeart } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 // Enhanced helper for open/closed/about
 function getBusinessStatus(now, hours) {
@@ -122,11 +125,12 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link to="/services"
-              className="inline-flex items-center bg-white text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-              VIEW ALL PROGRAMS
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+              <Link to="/services" className="inline-flex items-center px-8 py-4 text-lg font-bold">
+                VIEW ALL PROGRAMS
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -202,46 +206,71 @@ const Home = () => {
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">Your fitness journey starts here</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Business Hours Improved Card */}
-            <div className="bg-[#15171C] border border-gray-700 p-8 rounded-xl text-center flex flex-col items-center hover:border-primary-green transition-all duration-300">
-              <Clock className="h-12 w-12 text-primary-green mx-auto mb-4" />
-              <h3 className="text-2xl font-black text-white mb-4 uppercase tracking-wide">Business Hours</h3>
-              <div className="w-full max-w-[220px] mx-auto text-gray-300 mb-4">
-                <div className="flex justify-between py-1 border-b border-gray-600">
-                  <span className="font-semibold">{businessInfo.hours.weekdays.label}</span>
-                  <span>{businessInfo.hours.weekdays.time}</span>
+            {/* Business Hours Card */}
+            <Card className="bg-[#15171C] border-gray-700 hover:border-primary-green transition-all duration-300">
+              <CardHeader className="text-center">
+                <Clock className="h-12 w-12 text-primary-green mx-auto mb-4" />
+                <CardTitle className="text-2xl font-black text-white uppercase tracking-wide">
+                  Business Hours
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="w-full max-w-[220px] mx-auto text-gray-300 mb-4">
+                  <div className="flex justify-between py-1 border-b border-gray-600">
+                    <span className="font-semibold">{businessInfo.hours.weekdays.label}</span>
+                    <span>{businessInfo.hours.weekdays.time}</span>
+                  </div>
+                  <div className="flex justify-between py-1">
+                    <span className="font-semibold text-accent-green">{businessInfo.hours.sunday.label}</span>
+                    <span className="text-accent-green">{businessInfo.hours.sunday.time}</span>
+                  </div>
                 </div>
-                <div className="flex justify-between py-1">
-                  <span className="font-semibold text-accent-green">{businessInfo.hours.sunday.label}</span>
-                  <span className="text-accent-green">{businessInfo.hours.sunday.time}</span>
+                <Badge className="bg-primary-green text-black hover:bg-primary-green/90 mb-2">
+                  <CalendarHeart className="w-4 h-4 mr-1" /> {businessInfo.popularTimes}
+                </Badge>
+                <div className={`block mt-2 font-semibold text-sm ${status.color}`}>
+                  {getStatusMessage(status.status)}
                 </div>
-              </div>
-              <div className="inline-flex items-center bg-primary-green text-black px-3 py-1 rounded-full text-sm font-semibold mb-2">
-                <CalendarHeart className="w-4 h-4 mr-1" /> {businessInfo.popularTimes}
-              </div>
-              {/* Real-time status */}
-              <span className={`block mt-2 font-semibold text-sm ${status.color}`}>
-                {getStatusMessage(status.status)}
-              </span>
-            </div>
+              </CardContent>
+            </Card>
 
             {/* Location Card */}
-            <div className="bg-[#15171C] border border-gray-700 p-8 rounded-xl text-center flex flex-col items-center hover:border-primary-green transition-all duration-300">
-              <MapPin className="h-12 w-12 text-primary-green mx-auto mb-4" />
-              <h3 className="text-2xl font-black text-white mb-4 uppercase tracking-wide">Location</h3>
-              <div className="text-gray-300 mb-2 font-semibold">{businessInfo.address}</div>
-              <div className="text-gray-400 mb-4">Mysuru, Karnataka 570017</div>
-              <span className="inline-block bg-accent-green text-black px-3 py-1 rounded-full text-xs font-semibold">Near Krishna Devaraya Circle</span>
-            </div>
+            <Card className="bg-[#15171C] border-gray-700 hover:border-primary-green transition-all duration-300">
+              <CardHeader className="text-center">
+                <MapPin className="h-12 w-12 text-primary-green mx-auto mb-4" />
+                <CardTitle className="text-2xl font-black text-white uppercase tracking-wide">
+                  Location
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-gray-300 mb-2 font-semibold">{businessInfo.address}</div>
+                <CardDescription className="text-gray-400 mb-4">
+                  Mysuru, Karnataka 570017
+                </CardDescription>
+                <Badge variant="secondary" className="bg-accent-green text-black hover:bg-accent-green/90">
+                  Near Krishna Devaraya Circle
+                </Badge>
+              </CardContent>
+            </Card>
 
             {/* Contact Card */}
-            <div className="bg-[#15171C] border border-gray-700 p-8 rounded-xl text-center flex flex-col items-center hover:border-primary-green transition-all duration-300">
-              <Phone className="h-12 w-12 text-primary-green mx-auto mb-4" />
-              <h3 className="text-2xl font-black text-white mb-4 uppercase tracking-wide">Contact Us</h3>
-              <div className="mb-2 font-semibold text-xl text-accent-green">{businessInfo.phone}</div>
-              <div className="text-gray-400 mb-2">Call for membership details</div>
-              <span className="inline-block bg-primary-green text-black px-3 py-1 rounded-full text-xs font-semibold">Online classes available</span>
-            </div>
+            <Card className="bg-[#15171C] border-gray-700 hover:border-primary-green transition-all duration-300">
+              <CardHeader className="text-center">
+                <Phone className="h-12 w-12 text-primary-green mx-auto mb-4" />
+                <CardTitle className="text-2xl font-black text-white uppercase tracking-wide">
+                  Contact Us
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="mb-2 font-semibold text-xl text-accent-green">{businessInfo.phone}</div>
+                <CardDescription className="text-gray-400 mb-4">
+                  Call for membership details
+                </CardDescription>
+                <Badge className="bg-primary-green text-black hover:bg-primary-green/90">
+                  Online classes available
+                </Badge>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -254,12 +283,16 @@ const Home = () => {
             Join thousands of members who have already started their fitness journey with us
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/membership" className="bg-white text-black px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-gray-100 transform hover:scale-105 transition-all duration-200">
-              View Membership Plans
-            </Link>
-            <Link to="/contact" className="border-2 border-white text-white px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-200">
-              Schedule a Tour
-            </Link>
+            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 transform hover:scale-105 transition-all duration-200">
+              <Link to="/membership" className="px-8 py-4 font-black uppercase tracking-wide">
+                View Membership Plans
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black transform hover:scale-105 transition-all duration-200">
+              <Link to="/contact" className="px-8 py-4 font-black uppercase tracking-wide">
+                Schedule a Tour
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

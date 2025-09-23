@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Check, Star, Crown } from 'lucide-react';
+import { Check, Star, Crown, ArrowRight, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const Membership = () => {
   const [selectedPlan, setSelectedPlan] = useState('Premium');
@@ -104,9 +108,9 @@ const Membership = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
-              <div
+              <Card
                 key={index}
-                className={`relative bg-[#15171C] border-2 rounded-2xl transition-all duration-300 cursor-pointer group ${
+                className={`relative bg-[#15171C] border-2 transition-all duration-300 cursor-pointer group ${
                   selectedPlan === plan.name
                     ? 'border-primary-green scale-105'
                     : 'border-gray-700 hover:border-gray-600'
@@ -114,22 +118,22 @@ const Membership = () => {
                 onClick={() => setSelectedPlan(plan.name)}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-green text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
+                  <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-green text-white hover:bg-primary-green">
                     Most Popular
-                  </div>
+                  </Badge>
                 )}
-                <div className="p-8 text-center">
+                <CardContent className="p-8 text-center">
                   <div className="flex justify-center mb-6">
-                    {plan.icon && React.createElement(plan.icon, { 
-                      className: `h-10 w-10 ${selectedPlan === plan.name ? 'text-primary-green' : 'text-gray-400'}`
-                    })}
+                    {plan.icon && (
+                      <plan.icon className={`h-10 w-10 ${selectedPlan === plan.name ? 'text-primary-green' : 'text-gray-400'}`} />
+                    )}
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white uppercase tracking-wide">{plan.name}</h3>
+                  <CardTitle className="text-2xl font-bold mb-4 text-white uppercase tracking-wide">{plan.name}</CardTitle>
                   <div className="flex justify-center items-end mb-6">
                     <span className="text-4xl font-black text-primary-green mr-2">₹{plan.price}</span>
                     <span className="text-gray-400 text-lg">/ {plan.period}</span>
                   </div>
-                  <p className="text-gray-400 mb-8">{plan.description}</p>
+                  <CardDescription className="text-gray-400 mb-8">{plan.description}</CardDescription>
                   <ul className="text-left mb-8 space-y-3">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start text-gray-300">
@@ -138,15 +142,15 @@ const Membership = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
+                  <Button className={`w-full font-bold text-lg transition-all duration-300 ${
                     selectedPlan === plan.name
-                      ? 'bg-white text-black'
+                      ? 'bg-white text-black hover:bg-white'
                       : 'border-2 border-white text-white hover:bg-white hover:text-black'
-                  }`}>
+                  }`} variant={selectedPlan === plan.name ? 'default' : 'outline'}>
                     {selectedPlan === plan.name ? 'SELECTED' : 'CHOOSE PLAN'}
-                  </button>
-                </div>
-              </div>
+                  </Button>
+                </CardContent>
+              </Card>
             ))}
           </div>
           <div className="text-center mt-12">
@@ -174,16 +178,18 @@ const Membership = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {addOns.map((addon, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 p-6 rounded-2xl hover:border-primary-green transition-all duration-300 group">
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-white mb-3 uppercase tracking-wide">{addon.name}</h3>
-                  <div className="text-2xl font-black text-primary-green mb-4">₹{addon.price}</div>
-                  <p className="text-sm text-gray-400 mb-6">{addon.description}</p>
-                  <button className="text-white font-bold border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+              <Card key={index} className="bg-[#171A26] border-gray-700 hover:border-primary-green transition-all duration-300 text-center">
+                <CardHeader>
+                  <CardTitle className="text-lg font-bold text-white uppercase tracking-wide">{addon.name}</CardTitle>
+                  <div className="text-2xl font-black text-primary-green">₹{addon.price}</div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm text-gray-400 mb-6">{addon.description}</CardDescription>
+                  <Button variant="outline" className="text-white font-bold border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
                     ADD TO PLAN
-                  </button>
-                </div>
-              </div>
+                  </Button>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -224,15 +230,22 @@ const Membership = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-primary-green p-8 rounded-2xl">
-              <h4 className="text-xl font-bold text-white mb-4 uppercase">Get Started Today</h4>
-              <p className="text-white mb-6 opacity-90">
-                Contact us to learn about our corporate wellness packages and how we can customize a program for your organization.
-              </p>
-              <button className="bg-white text-primary-green px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors uppercase tracking-wide">
-                Contact Sales Team
-              </button>
-            </div>
+            <Card className="bg-primary-green border-primary-green">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-white uppercase flex items-center">
+                  <Users className="mr-2 h-6 w-6" />
+                  Get Started Today
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-white mb-6 opacity-90">
+                  Contact us to learn about our corporate wellness packages and how we can customize a program for your organization.
+                </CardDescription>
+                <Button className="bg-white text-primary-green hover:bg-gray-100 transition-colors uppercase tracking-wide">
+                  Contact Sales Team
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -245,12 +258,17 @@ const Membership = () => {
             Start your fitness journey today with our 7-day free trial
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-              START FREE TRIAL
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
-              CONTACT US
-            </button>
+            <Button size="lg" className="bg-white text-black hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+              <span className="px-4 py-2 text-lg font-bold">
+                START FREE TRIAL
+              </span>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+              <Link to="/contact" className="px-4 py-2 text-lg font-bold inline-flex items-center">
+                CONTACT US
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

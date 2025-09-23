@@ -1,5 +1,9 @@
 import React from 'react';
-import { Dumbbell, Users, Heart, Target, Clock, Zap, Apple, Shield, Activity, Music, Monitor, GraduationCap } from 'lucide-react';
+import { Dumbbell, Users, Heart, Target, Clock, Zap, Apple, Shield, Activity, Music, Monitor, GraduationCap, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const Services = () => {
   const services = [
@@ -172,17 +176,21 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {specialPrograms.map((program, index) => (
-              <div key={index} className="bg-[#171A26] border border-gray-700 p-8 rounded-2xl hover:border-primary-green transition-all duration-300 text-center group">
-                <div className="bg-gradient-to-r from-primary-green to-accent-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <program.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wide">{program.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{program.description}</p>
-                <div className="flex justify-between text-sm text-gray-400 border-t border-gray-600 pt-4">
-                  <span className="font-semibold text-gray-300"><strong className="text-primary-green">Duration:</strong> {program.duration}</span>
-                  <span className="font-semibold text-gray-300"><strong className="text-accent-green">Sessions:</strong> {program.sessions}</span>
-                </div>
-              </div>
+              <Card key={index} className="bg-[#171A26] border-gray-700 hover:border-primary-green transition-all duration-300 text-center group">
+                <CardHeader>
+                  <div className="bg-gradient-to-r from-primary-green to-accent-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <program.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-black text-white uppercase tracking-wide">{program.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-400 mb-6 leading-relaxed">{program.description}</CardDescription>
+                  <div className="flex justify-between text-sm text-gray-400 border-t border-gray-600 pt-4">
+                    <span className="font-semibold text-gray-300"><strong className="text-primary-green">Duration:</strong> {program.duration}</span>
+                    <span className="font-semibold text-gray-300"><strong className="text-accent-green">Sessions:</strong> {program.sessions}</span>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -274,18 +282,18 @@ const Services = () => {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/certification"
-                className="bg-white text-black px-8 py-4 rounded-xl font-black text-lg uppercase tracking-wide hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
-              >
-                Explore Certification Program
-              </a>
-              <a
-                href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-black text-lg uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-200"
-              >
-                Book Info Session
-              </a>
+              <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 transform hover:scale-105 transition-all duration-200">
+                <Link to="/certification" className="px-8 py-4 font-black text-lg uppercase tracking-wide inline-flex items-center">
+                  Explore Certification Program
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-200">
+                <Link to="/contact" className="px-8 py-4 font-black text-lg uppercase tracking-wide inline-flex items-center">
+                  Book Info Session
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -299,18 +307,18 @@ const Services = () => {
             Choose the service that fits your goals and start your transformation today
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href="/membership"
-              className="bg-white text-black px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
-            >
-              View Membership Plans
-            </a>
-            <a
-              href="/contact"
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-200"
-            >
-              Schedule Consultation
-            </a>
+            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 transform hover:scale-105 transition-all duration-200">
+              <Link to="/membership" className="px-8 py-4 font-black uppercase tracking-wide inline-flex items-center">
+                View Membership Plans
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-200">
+              <Link to="/contact" className="px-8 py-4 font-black uppercase tracking-wide inline-flex items-center">
+                Schedule Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

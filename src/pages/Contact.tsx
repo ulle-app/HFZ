@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Youtube, Send } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -74,18 +77,22 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
-              <div key={index} className="bg-[#15171C] border border-gray-700 rounded-2xl p-8 text-center group hover:border-primary-green transition-all duration-300 transform hover:scale-105">
-                <div className="bg-primary-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-green transition-colors">
-                  <info.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-black text-white mb-4">{info.title}</h3>
-                {info.details.map((detail, detailIndex) => (
-                  <p key={detailIndex} className="text-gray-400 mb-2">{detail}</p>
-                ))}
-                {info.description && (
-                  <p className="text-sm text-gray-500 mt-3">{info.description}</p>
-                )}
-              </div>
+              <Card key={index} className="bg-[#15171C] border-gray-700 hover:border-primary-green transition-all duration-300 transform hover:scale-105 text-center">
+                <CardHeader>
+                  <div className="bg-primary-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-green transition-colors">
+                    <info.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-black text-white">{info.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {info.details.map((detail, detailIndex) => (
+                    <p key={detailIndex} className="text-gray-400 mb-2">{detail}</p>
+                  ))}
+                  {info.description && (
+                    <CardDescription className="text-sm text-gray-500 mt-3">{info.description}</CardDescription>
+                  )}
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -186,12 +193,12 @@ const Contact = () => {
                   />
                 </div>
                 
-                <button
-                  type="submit"
-                  className="w-full bg-white text-black py-4 px-8 rounded-xl text-lg font-black uppercase tracking-wide hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
-                >
-                  Send Message
-                </button>
+                <Button type="submit" size="lg" className="w-full bg-white text-black hover:bg-gray-100 transform hover:scale-105 transition-all duration-200">
+                  <span className="inline-flex items-center px-4 py-2 text-lg font-black uppercase tracking-wide">
+                    Send Message
+                    <Send className="ml-2 h-5 w-5" />
+                  </span>
+                </Button>
               </form>
             </div>
 
@@ -215,22 +222,24 @@ const Contact = () => {
               </div>
               
               {/* Location Card */}
-              <div className="bg-[#171A26] border border-gray-700 rounded-2xl p-8">
-                <h3 className="text-2xl font-black text-white mb-6">VISIT OUR LOCATION</h3>
-                <div className="space-y-6">
+              <Card className="bg-[#171A26] border-gray-700">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-black text-white">VISIT OUR LOCATION</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary-green p-2 rounded-lg flex-shrink-0">
+                    <Badge className="bg-primary-green p-2 rounded-lg flex-shrink-0 hover:bg-primary-green">
                       <MapPin className="h-5 w-5 text-white" />
-                    </div>
+                    </Badge>
                     <div>
                       <p className="font-bold text-white">ADDRESS</p>
                       <p className="text-gray-400">3115, Hoysala Circle, Mysuru, Karnataka 570017</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="bg-accent-green p-2 rounded-lg flex-shrink-0">
+                    <Badge className="bg-accent-green p-2 rounded-lg flex-shrink-0 hover:bg-accent-green">
                       <Clock className="h-5 w-5 text-black" />
-                    </div>
+                    </Badge>
                     <div>
                       <p className="font-bold text-white">HOURS</p>
                       <p className="text-gray-400">Mon-Fri: 5:00 AM - 11:00 PM</p>
@@ -238,16 +247,16 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary-green p-2 rounded-lg flex-shrink-0">
+                    <Badge className="bg-primary-green p-2 rounded-lg flex-shrink-0 hover:bg-primary-green">
                       <Phone className="h-5 w-5 text-white" />
-                    </div>
+                    </Badge>
                     <div>
                       <p className="font-bold text-white">PHONE</p>
                       <p className="text-gray-400">080888 64412</p>
                     </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -282,9 +291,11 @@ const Contact = () => {
               <p className="text-white mb-8 text-lg">
                 Schedule a free tour and consultation with one of our fitness experts
               </p>
-              <button className="bg-white text-black px-8 py-4 rounded-xl font-black uppercase tracking-wide hover:bg-gray-100 transition-colors transform hover:scale-105">
-                Schedule Free Tour
-              </button>
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 transition-colors transform hover:scale-105">
+                <span className="px-4 py-2 font-black uppercase tracking-wide">
+                  Schedule Free Tour
+                </span>
+              </Button>
             </div>
           </div>
         </div>
