@@ -1,10 +1,13 @@
 import React from 'react';
 import { Users, Award, Target, Heart, ArrowRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hamsinipic from '../assets/team/namrathashree-nutritionist.jpeg';
+import hamsinipic from '../assets/team/Hamsini.jpeg';
+import namrathapic from '../assets/team/Namratha.jpeg';
 import anithapic from '../assets/team/anitha-dance-teacher.jpeg';
 import yatindrapic from '../assets/team/yatindra-coach.jpeg';
-import abouthero from '../assets/about-hero.jpeg';
+import abouthero from '../assets/team/Himanshu.jpeg';
+import karnikpic from '../assets/team/karnik.jpeg';
+import sachinpic from '../assets/team/Sachin.jpeg';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -44,7 +47,7 @@ const About = () => {
     {
       name: 'Namrathashree',
       role: 'Nutritionist & Dietitian',
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: namrathapic,
       bio: 'Bachelor\'s in Microbiology, Chemistry, Clinical Nutrition and Dietetics. Master\'s in Food Science and Nutrition. 5+ years experience as Dietitian at Bharath Hospital and Institute of Oncology. Specialized in Clinical Nutrition & Food Science. At Heal Fitness Zone for the past 2 years.'
     },
     {
@@ -68,8 +71,14 @@ const About = () => {
     {
       name: 'Sachin',
       role: 'Fitness Trainer',
-      image: 'https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: sachinpic,
       bio: 'Worked as paramedical operation technician. Being passionate towards bodybuilding and fitness, entered the fitness field five years ago. Took bodybuilding training under renowned bodybuilders and now works as fitness trainer at Heal Fitness Zone.'
+    },
+    {
+      name: 'Karnik Shivadas',
+      role: 'Karate Instructor',
+      image: karnikpic,
+      bio: 'BLACK BELT 6th DAN with extensive experience in karate. WKF JUDGE & AKF REFEREE and REFEREE COMMISSION MEMBER(AKSKA). Dedicated to teaching traditional karate and self-defense techniques.'
     }
   ];
 

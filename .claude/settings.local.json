@@ -20,12 +20,14 @@
       "mcp__shadcn__get_add_command_for_items",
       "Bash(npx shadcn@latest add:*)",
       "Bash(npx:*)",
-      "mcp__shadcn__get_project_registries"
+      "mcp__shadcn__get_project_registries",
+      "mcp__playwright__browser_navigate"
     ],
     "deny": [],
     "ask": []
   },
   "enabledMcpjsonServers": [
     "shadcn"
-  ]
+  ],
+  "enableAllProjectMcpServers": true
 }

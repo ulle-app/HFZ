@@ -1,9 +1,13 @@
 import React from 'react';
 import { Star, Award, Users, Dumbbell, Heart, Target, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hamsinipic from '../assets/team/namrathashree-nutritionist.jpeg';
+import hamsinipic from '../assets/team/Hamsini.jpeg';
+import namrathapic from '../assets/team/Namratha.jpeg';
 import anithapic from '../assets/team/anitha-dance-teacher.jpeg';
 import yatindrapic from '../assets/team/yatindra-coach.jpeg';
+import karnikpic from '../assets/team/karnik.jpeg';
+import himansupic from '../assets/team/Himanshu.jpeg';
+import sachinpic from '../assets/team/Sachin.jpeg';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -27,7 +31,7 @@ const Trainers = () => {
       specialties: ['Clinical Nutrition', 'Food Science', 'Weight Management'],
       experience: '5+ years',
       certifications: ['B.Sc Microbiology', 'M.Sc Food Science & Nutrition', 'Clinical Nutrition'],
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: namrathapic,
       bio: 'Bachelor\'s in Microbiology, Chemistry, Clinical Nutrition and Dietetics. Master\'s in Food Science and Nutrition. 5+ years experience as Dietitian at Bharath Hospital and Institute of Oncology. At Heal Fitness Zone for the past 2 years.',
       rating: 4.9,
       sessions: '2+ years'
@@ -71,10 +75,21 @@ const Trainers = () => {
       specialties: ['Bodybuilding', 'Fitness Training', 'Personal Training'],
       experience: '5+ years',
       certifications: ['Bodybuilding Training', 'Fitness Specialist'],
-      image: 'https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: sachinpic,
       bio: 'Worked as paramedical operation technician. Being passionate towards bodybuilding and fitness, entered the fitness field five years ago. Took bodybuilding training under renowned bodybuilders and now works as fitness trainer at Heal Fitness Zone.',
       rating: 4.9,
       sessions: '5+ years'
+    },
+    {
+      name: 'Karnik Shivadas',
+      role: 'Karate Instructor',
+      specialties: ['Karate', 'Martial Arts', 'Self Defense'],
+      experience: '15+ years',
+      certifications: ['BLACK BELT 6th DAN', 'WKF JUDGE & AKF REFEREE', 'REFEREE COMMISSION MEMBER(AKSKA)'],
+      image: karnikpic,
+      bio: 'BLACK BELT 6th DAN with extensive experience in karate. WKF JUDGE & AKF REFEREE and REFEREE COMMISSION MEMBER(AKSKA). Dedicated to teaching traditional karate and self-defense techniques.',
+      rating: 4.9,
+      sessions: '15+ years'
     }
   ];
 
